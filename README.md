@@ -1,3 +1,6 @@
+1 删除影响启动项打开的 target/linux/mediatek/mt7988/base-files/etc/init.d 目录下两个脚本
+2 修改lan0不能pppoe 
+3
 # BPI-R4-MT76-OPENWRT-V21.02 BSP support BPI-R4 and BE13500 wifi Card
 
 ![OpenWrt logo](include/logo.png)
