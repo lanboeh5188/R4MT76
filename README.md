@@ -6,6 +6,7 @@
 此两行已注释掉 默认会编译报错   
 4 CPU添加2g 和2.2g两个档位   
 5 修改ppe数为3   
+6 修改 Update sysctl-nf-conntrack.conf 连接数为65536
 
 # BPI-R4-MT76-OPENWRT-V21.02 BSP support BPI-R4 and BE13500 wifi Card
 
