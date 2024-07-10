@@ -1,4 +1,4 @@
-1 删除影响启动项打开的 target/linux/mediatek/mt7988/base-files/etc/init.d 目录下两个脚本   
+1 删除影响启动项打开的 target/linux/mediatek/mt7988/base-files/etc/init.d 目录下移远脚本
 2 修改lan0不能pppoe    
 3 package makefile    
 //$(curdir)/compile: $(curdir)/cryptsetup/host/compile   
