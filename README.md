@@ -8,6 +8,7 @@
 5 修改ppe数为3   
 6 修改 Update sysctl-nf-conntrack.conf 连接数为65536   
 7 升级golang 1.22.5版本   
+8 在线更新软件  请自行添加wgetssl 把默认wgetnossl去掉 
 
 # BPI-R4-MT76-OPENWRT-V21.02 BSP support BPI-R4 and BE13500 wifi Card
 
