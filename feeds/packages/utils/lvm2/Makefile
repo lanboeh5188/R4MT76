@@ -24,11 +24,7 @@ PKG_CPE_ID:=cpe:/a:heinz_mauelshagen:lvm2
 
 PKG_BUILD_PARALLEL:=1
 
-HOST_BUILD_DEPENDS:=libaio/host
-HOST_BUILD_PREFIX:=$(STAGING_DIR_HOST)
-
 include $(INCLUDE_DIR)/package.mk
-include $(INCLUDE_DIR)/host-build.mk
 
 define Package/libdevmapper/Default
   SECTION:=libs
@@ -62,15 +58,6 @@ $(call Package/libdevmapper/description)
 
 endef
 
-define Package/dmsetup
-  SECTION:=utils
-  CATEGORY:=Utilities
-  SUBMENU:=Disc
-  TITLE:=The Linux Kernel Device Mapper userspace setup utility
-  URL:=https://sourceware.org/dm/
-  DEPENDS:=+libdevmapper
-endef
-
 define Package/lvm2/default
   SECTION:=utils
   CATEGORY:=Utilities
@@ -83,7 +70,7 @@ endef
 define Package/lvm2
   $(call Package/lvm2/default)
   VARIANT := normal
-  DEPENDS += +libdevmapper +dmsetup
+  DEPENDS += +libdevmapper
 endef
 
 define Package/lvm2-selinux
@@ -118,16 +105,6 @@ ifneq ($(shell /bin/sh -c "echo -n 'X'"),X)
 MAKE_SHELL = SHELL=/bin/bash
 endif
 
-HOST_CONFIGURE_ARGS += \
-	--enable-write_install \
-	--enable-pkgconfig \
-	--disable-cmdlib \
-	--disable-dmeventd \
-	--disable-applib \
-	--disable-fsadm \
-	--disable-readline \
-	--disable-selinux
-
 define Build/Compile
 	$(MAKE) -C $(PKG_BUILD_DIR) \
 		CC="$(TARGET_CC)" \
@@ -153,15 +130,10 @@ endef
 
 Package/libdevmapper-selinux/install = $(Package/libdevmapper/install)
 
-define Package/dmsetup/install
-	$(INSTALL_DIR) $(1)/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/dmsetup $(1)/sbin
-	ln -sf dmsetup $(1)/sbin/dmstats
-endef
-
 define Package/lvm2/install
 	$(INSTALL_DIR) $(1)/sbin
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/lvm $(1)/sbin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/dmsetup $(1)/sbin
 	$(INSTALL_DIR) $(1)/etc/lvm
 	$(SED) '/^[[:space:]]*\(#\|$$$$\)/d; /cache_dir/s@.*@	cache_dir = "/tmp/lvm/cache"@' $(PKG_INSTALL_DIR)/etc/lvm/lvm.conf
 	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/etc/lvm/lvm.conf $(1)/etc/lvm/
@@ -174,7 +146,7 @@ define Package/lvm2/install
 	$(INSTALL_BIN) ./files/lvm2.init $(1)/etc/init.d/lvm2
 	$(INSTALL_DIR) $(1)/etc/hotplug.d/block
 	$(INSTALL_DATA) ./files/lvm2.hotplug $(1)/etc/hotplug.d/block/20-lvm2
-	$(FIND) $(PKG_INSTALL_DIR)/usr/sbin/ -type l ! -name dmstats -exec $(CP) -a {} $(1)/sbin/ \;
+	$(FIND) $(PKG_INSTALL_DIR)/usr/sbin/ -type l -exec $(CP) -a {} $(1)/sbin/ \;
 endef
 
 Package/lvm2-selinux/install = $(Package/lvm2/install)
@@ -183,30 +155,9 @@ define Package/lvm2/conffiles
 /etc/lvm/lvm.conf
 endef
 
-define Host/Prepare
-	$(HOST_UNPACK)
-	[ ! -d ./src/ ] || $(CP) ./src/* $(HOST_BUILD_DIR)
-
-	mv $(HOST_BUILD_DIR)/../$(PKG_NAME).$(PKG_VERSION)/* $(HOST_BUILD_DIR)/
-	rmdir $(HOST_BUILD_DIR)/../$(PKG_NAME).$(PKG_VERSION)
-
-	$(Host/Patch)
-endef
-
-define Host/Compile
-	$(call Host/Compile/Default,device-mapper)
-endef
-
-define Host/Install
-	$(call Host/Compile/Default,install_device-mapper)
-endef
-
-
 Package/lvm2-selinux/conffiles = $(Package/lvm2/conffiles)
 
 $(eval $(call BuildPackage,libdevmapper))
 $(eval $(call BuildPackage,libdevmapper-selinux))
-$(eval $(call BuildPackage,dmsetup))
 $(eval $(call BuildPackage,lvm2))
 $(eval $(call BuildPackage,lvm2-selinux))
-$(eval $(call HostBuild))
