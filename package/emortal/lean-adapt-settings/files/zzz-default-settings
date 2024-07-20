@@ -1,0 +1,30 @@
+#!/bin/sh
+
+uci commit luci
+
+uci set system.@system[0].timezone=CST-8
+uci set system.@system[0].zonename=Asia/Shanghai
+uci commit system
+
+uci set fstab.@global[0].anon_mount=1
+uci commit fstab
+
+ln -sf /usr/bin/python3 /usr/bin/python
+
+sed -i '/log-facility/d' /etc/dnsmasq.conf
+echo "log-facility=/dev/null" >> /etc/dnsmasq.conf
+
+sed -i 's/cbi.submit\"] = true/cbi.submit\"] = \"1\"/g' /usr/lib/lua/luci/dispatcher.lua
+
+/sbin/wifi config
+
+rm -rf /tmp/luci-modulecache/
+rm -f /tmp/luci-indexcache
+
+echo '这个cake列队规则使用HTB作为过滤器，使用fq_codel作为叶列队规则。 这个cake规则将不同的文件分为不同的“层次”优先级。 该脚本需要将该cake选为列队规则。 请参阅：http://www.bufferbloat.net/projects/codel/wiki/Cake获取更多信息。' >/usr/lib/sqm/layer_cake.qos.help
+echo '这个cake列队规则使用HTB作为过滤器，使用fq_codel作为叶列队规则。 它不会比这更简单，换句话说，它真的是“小菜一碟”。 该脚本需要将cake选为列队规则。 请参阅：http://www.bufferbloat.net/projects/codel/wiki/Cake获取更多信息' >/usr/lib/sqm/piece_of_cake.qos.help
+echo '使用fq_codel列队规则在每个列队上进行三层优先级的带宽控制。（默认）' >/usr/lib/sqm/simple.qos.help
+echo '最简单的配置：使用带有HTB过滤器的列队规则来进行速率限制。' >/usr/lib/sqm/simplest.qos.help
+echo '最简单的配置（TBF）：使用带有TBF过滤器的列队规则来进行速率限制。在某些架构上，TBF可能会比HTB提供更好的性能。' >/usr/lib/sqm/simplest_tbf.qos.help
+
+exit 0

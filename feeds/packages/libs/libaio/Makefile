@@ -23,10 +23,7 @@ PKG_BUILD_PARALLEL:=1
 PKG_USE_MIPS16:=0
 PKG_INSTALL:=1
 
-HOST_BUILD_PREFIX:=$(STAGING_DIR_HOST)
-
 include $(INCLUDE_DIR)/package.mk
-include $(INCLUDE_DIR)/host-build.mk
 
 define Package/libaio
   SECTION:=libs
@@ -47,13 +44,4 @@ define Package/libaio/install
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/libaio.so.* $(1)/usr/lib/
 endef
 
-define Host/Compile
-	$(MAKE) -C $(HOST_BUILD_DIR)
-endef
-
-define Host/Install
-	$(MAKE) -C $(HOST_BUILD_DIR) prefix=$(HOST_BUILD_PREFIX) install
-endef
-
 $(eval $(call BuildPackage,libaio))
-$(eval $(call HostBuild))

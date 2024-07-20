@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=cryptsetup
-PKG_VERSION:=2.3.4
-PKG_RELEASE:=2
+PKG_VERSION:=2.5.0
+PKG_RELEASE:=$(AUTORELEASE)
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
 PKG_SOURCE_URL:=@KERNEL/linux/utils/cryptsetup/v2.5
-PKG_HASH:=9d16eebb96b53b514778e813019b8dd15fea9fec5aafde9fae5febf59df83773
+PKG_HASH:=9184a6ebbd9ce7eb211152e7f741a6c82f2d1cc0e24a84ec9c52939eee0f0542
 
 PKG_MAINTAINER:=Daniel Golle <daniel@makrotopia.org>
 PKG_LICENSE:=GPL-2.0-or-later LGPL-2.1-or-later
@@ -25,12 +25,8 @@ PKG_BUILD_PARALLEL:=1
 
 PKG_BUILD_DEPENDS:=!USE_GLIBC:argp-standalone
 
-HOST_BUILD_DEPENDS:=lvm2/host libjson-c/host popt/host
-HOST_BUILD_PREFIX:=$(STAGING_DIR_HOST)
-
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/nls.mk
-include $(INCLUDE_DIR)/host-build.mk
 
 define Package/cryptsetup
   SECTION:=utils
@@ -81,13 +77,6 @@ CONFIGURE_VARS += \
 
 TARGET_LDFLAGS += -Wl,--gc-sections $(if $(INTL_FULL),-lintl)
 
-HOST_CONFIGURE_ARGS += \
-	--with-crypto-backend=openssl \
-	$(STAGING_DIR_HOST) \
-	--disable-kernel_crypto \
-	--disable-blkid \
-	--enable-libiconv-tiny
-
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include
 	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/usr/include/libcryptsetup.h $(1)/usr/include
@@ -111,12 +100,5 @@ define Package/cryptsetup-ssh/install
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/cryptsetup-ssh $(1)/usr/sbin
 endef
 
-define Host/Install
-	$(INSTALL_BIN) $(HOST_BUILD_DIR)/veritysetup $(STAGING_DIR_HOST)/bin/veritysetup
-	$(INSTALL_BIN) $(HOST_BUILD_DIR)/cryptsetup $(STAGING_DIR_HOST)/bin/cryptsetup
-	$(CP) $(HOST_BUILD_DIR)/.libs $(STAGING_DIR_HOST)/bin/
-endef
-
 $(eval $(call BuildPackage,cryptsetup))
 $(eval $(call BuildPackage,cryptsetup-ssh))
-$(eval $(call HostBuild))

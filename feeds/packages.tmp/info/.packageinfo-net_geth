@@ -3,7 +3,7 @@ Build-Depends: golang/host !BUILD_NLS:libiconv !BUILD_NLS:gettext
 
 Package: geth
 Version: 1.9.25-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +BUILD_NLS:libiconv-full
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +BUILD_NLS:libiconv-full
 Conflicts: 
 Menu-Depends: 
 Provides: 
