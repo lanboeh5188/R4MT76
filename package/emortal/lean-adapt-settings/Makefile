@@ -20,7 +20,7 @@ define Package/lean-adapt-settings
   CATEGORY:=LuCI
   TITLE:=adjusted lean settins - LuCI support for Default Settings
   PKGARCH:=all
-  DEPENDS:=+luci-base +@LUCI_LANG_zh_Hans +wget +python3 +libustream-openssl
+  DEPENDS:=+luci-base +@LUCI_LANG_zh_Hans +python3 +libustream-openssl 
 endef
 
 define Package/lean-adapt-settings/description
