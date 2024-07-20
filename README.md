@@ -8,7 +8,8 @@
 5 修改ppe数为3   
 6 修改 Update sysctl-nf-conntrack.conf 连接数为65536   
 7 升级golang 1.22.5版本   
-8 在线更新软件  请自行添加wgetssl 把默认wgetnossl去掉 
+8 在线更新软件  请自行添加wgetssl 把默认wgetnossl去掉   
+9 修改为f2fs文件系统 不存在保存不了配置的问题 编译的时候选择ext4 可以自定义rootfs大小 直接填上即可   
 
 # BPI-R4-MT76-OPENWRT-V21.02 BSP support BPI-R4 and BE13500 wifi Card
 
