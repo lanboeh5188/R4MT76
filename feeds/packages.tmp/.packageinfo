@@ -1184,7 +1184,7 @@ Build-Depends: golang/host
 
 Package: gitlab-runner
 Version: 14.0.1-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -1428,7 +1428,7 @@ Build-Types: host
 
 Package: packr
 Version: 1.30.1-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -2777,8 +2777,8 @@ Build-Types: host
 
 Package: golang
 Submenu: Go
-Version: 1.18.10-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +golang-src
+Version: 1.22.1-1
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +golang-src
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -2787,7 +2787,7 @@ Category: Languages
 Repository: base
 Title: Go programming language (compiler)
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: go1.18.10.src.tar.gz
+Source: go1.22.1.src.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 Type: ipkg
@@ -2813,8 +2813,8 @@ Config:
 
 Package: golang-doc
 Submenu: Go
-Version: 1.18.10-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Version: 1.22.1-1
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -2823,7 +2823,7 @@ Category: Languages
 Repository: base
 Title: Go programming language (documentation)
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: go1.18.10.src.tar.gz
+Source: go1.22.1.src.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 Type: ipkg
@@ -2845,8 +2845,8 @@ Jeffery To <jeffery.to@gmail.com>
 
 Package: golang-src
 Submenu: Go
-Version: 1.18.10-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Version: 1.22.1-1
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -2855,7 +2855,7 @@ Category: Languages
 Repository: base
 Title: Go programming language (source files)
 Maintainer: Jeffery To <jeffery.to@gmail.com>
-Source: go1.18.10.src.tar.gz
+Source: go1.22.1.src.tar.gz
 License: BSD-3-Clause
 LicenseFiles: LICENSE
 Type: ipkg
@@ -56049,7 +56049,7 @@ Build-Depends: golang/host node/host node-yarn/host
 
 Package: adguardhome
 Version: 0.107.21-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +ca-bundle
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +ca-bundle
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -57778,7 +57778,7 @@ Build-Depends: golang/host
 
 Package: crowdsec
 Version: 1.3.0-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -57807,7 +57807,7 @@ Build-Depends: golang/host
 
 Package: crowdsec-firewall-bouncer
 Version: 0.0.21-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(PACKAGE_iptables||PACKAGE_nftables) @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(PACKAGE_iptables||PACKAGE_nftables) @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -58478,7 +58478,7 @@ Build-Depends: golang/host
 
 Package: dnscrypt-proxy2
 Version: 2.1.2-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +ca-bundle
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +ca-bundle
 Conflicts: dnscrypt-proxy
 Menu-Depends: 
 Provides: 
@@ -58500,7 +58500,7 @@ Josef Schlehofer <josef.schlehofer@nic.cz>
 Package: golang-github-jedisct1-dnscrypt-proxy2-dev
 Submenu: Go
 Version: 2.1.2-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +ca-bundle
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +ca-bundle
 Conflicts: dnscrypt-proxy
 Menu-Depends: 
 Provides: 
@@ -58593,7 +58593,7 @@ Build-Depends: golang/host
 
 Package: dnstap
 Version: 0.4.0-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -59875,7 +59875,7 @@ Build-Depends: golang/host
 Package: frpc
 Submenu: Web Servers/Proxies
 Version: 0.34.3-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -59897,7 +59897,7 @@ Richard Yu <yurichard3839@gmail.com>
 Package: frps
 Submenu: Web Servers/Proxies
 Version: 0.34.3-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -60453,7 +60453,7 @@ Build-Depends: golang/host
 Package: gateway-go
 Submenu: Web Servers/Proxies
 Version: 0.1.95-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -60477,7 +60477,7 @@ Build-Depends: golang/host !BUILD_NLS:libiconv !BUILD_NLS:gettext
 
 Package: geth
 Version: 1.9.25-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +BUILD_NLS:libiconv-full
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +BUILD_NLS:libiconv-full
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -60578,7 +60578,7 @@ Build-Depends: golang/host
 
 Package: git-lfs
 Version: 2.13.2-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +git
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +git
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -62619,7 +62619,7 @@ Build-Depends: golang/host
 Package: kcptun-config
 Submenu: Web Servers/Proxies
 Version: 20210922-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -63535,7 +63535,7 @@ Build-Depends: golang/host
 Package: librespeed-go
 Submenu: Web Servers/Proxies
 Version: 1.1.5-2
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -65685,7 +65685,7 @@ Build-Depends: golang/host
 
 Package: nebula
 Version: 1.5.0-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +kmod-tun
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +kmod-tun
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -65706,7 +65706,7 @@ Stan Grishin <stangri@melmac.ca>
 
 Package: nebula-cert
 Version: 1.5.0-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -66144,7 +66144,7 @@ Build-Depends: golang/host
 
 Package: nextdns
 Version: 1.40.1-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +ca-bundle
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +ca-bundle
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -66165,7 +66165,7 @@ Olivier Poitrey <rs@nextdns.io>
 Package: golang-github-nextdns-nextdns-dev
 Submenu: Go
 Version: 1.40.1-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +ca-bundle
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +ca-bundle
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -68386,7 +68386,7 @@ Build-Depends: golang/host
 
 Package: obfs4proxy
 Version: 0.0.11-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -68420,7 +68420,7 @@ Jeffery To <jeffery.to@gmail.com>
 Package: golang-gitlab-yawning-obfs4-dev
 Submenu: Go
 Version: 0.0.11-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -68567,7 +68567,7 @@ Build-Depends: golang/host
 
 Package: ooniprobe
 Version: 3.16.5-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -69472,7 +69472,7 @@ Build-Depends: golang/host
 Package: overture
 Submenu: IP Addresses and Names
 Version: 1.6.1-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -70661,7 +70661,7 @@ Build-Depends: golang/host
 Package: rclone
 Submenu: File Transfer
 Version: 1.63.1-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +ca-bundle +fuse-utils
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +ca-bundle +fuse-utils
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -70838,7 +70838,7 @@ Build-Depends: golang/host
 
 Package: restic-rest-server
 Version: 0.9.7-4
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -72057,7 +72057,7 @@ Build-Depends: golang/host
 
 Package: snowflake-broker
 Version: 2.5.1-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -72084,7 +72084,7 @@ Daniel Golle <daniel@makrotopia.org>, Nick Hainke <vincent@systemli.org>
 
 Package: snowflake-client
 Version: 2.5.1-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -72111,7 +72111,7 @@ Daniel Golle <daniel@makrotopia.org>, Nick Hainke <vincent@systemli.org>
 
 Package: snowflake-distinctcounter
 Version: 2.5.1-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -72138,7 +72138,7 @@ Daniel Golle <daniel@makrotopia.org>, Nick Hainke <vincent@systemli.org>
 
 Package: snowflake-probetest
 Version: 2.5.1-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -72165,7 +72165,7 @@ Daniel Golle <daniel@makrotopia.org>, Nick Hainke <vincent@systemli.org>
 
 Package: snowflake-proxy
 Version: 2.5.1-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -72192,7 +72192,7 @@ Daniel Golle <daniel@makrotopia.org>, Nick Hainke <vincent@systemli.org>
 
 Package: snowflake-server
 Version: 2.5.1-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -74853,7 +74853,7 @@ Build-Depends: golang/host
 Package: tailscale
 Submenu: VPN
 Version: 1.24.2-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +tailscaled
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +tailscaled
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -74875,7 +74875,7 @@ Jan Pavlinec <jan.pavlinec@nic.cz>
 Package: tailscaled
 Submenu: VPN
 Version: 1.24.2-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +ca-bundle +kmod-tun
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +ca-bundle +kmod-tun
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -75350,7 +75350,7 @@ Build-Depends: golang/host
 
 Package: tor-fw-helper
 Version: 0.3-2
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -75377,7 +75377,7 @@ Jeffery To <jeffery.to@gmail.com>
 Package: golang-torproject-tor-fw-helper-dev
 Submenu: Go
 Version: 0.3-2
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -76600,7 +76600,7 @@ Build-Depends: golang/host
 Package: v2raya
 Submenu: Web Servers/Proxies
 Version: 2.0.5-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +ca-bundle +iptables-mod-conntrack-extra +iptables-mod-extra +iptables-mod-filter +iptables-mod-tproxy +kmod-ipt-nat6 +xray-core
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +ca-bundle +iptables-mod-conntrack-extra +iptables-mod-extra +iptables-mod-filter +iptables-mod-tproxy +kmod-ipt-nat6 +xray-core
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -77320,7 +77320,7 @@ Build-Depends: golang/host
 
 Package: xray-core
 Version: 1.7.5-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +ca-bundle
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +ca-bundle
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -78279,7 +78279,7 @@ Build-Depends: golang/host
 Package: yggdrasil
 Submenu: Routing and Redirection
 Version: 0.4.3-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) @IPV6 +kmod-tun +dkjson +libuci-lua
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) @IPV6 +kmod-tun +dkjson +libuci-lua
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -82550,7 +82550,7 @@ Build-Depends: golang/host
 
 Package: cni
 Version: 1.0.1-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -82580,7 +82580,7 @@ Build-Depends: golang/host
 
 Package: cni-plugins
 Version: 1.0.1-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +ip-full +kmod-veth
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +ip-full +kmod-veth
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -84025,7 +84025,7 @@ Build-Depends: golang/host
 Package: containerd
 Menu: 1
 Version: 1.6.6-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +btrfs-progs +runc
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +btrfs-progs +runc
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -86350,7 +86350,7 @@ Build-Depends: golang/host
 
 Package: ctop
 Version: 0.7.5-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -86579,7 +86579,7 @@ Build-Depends: golang/host
 
 Package: docker
 Version: 20.10.17-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -86652,7 +86652,7 @@ Build-Depends: golang/host
 Package: dockerd
 Menu: 1
 Version: 20.10.17-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +btrfs-progs +ca-certificates +containerd +libdevmapper +libnetwork +tini +KERNEL_SECCOMP:libseccomp +iptables-mod-extra +kmod-br-netfilter +kmod-ikconfig +kmod-nf-conntrack-netlink +kmod-nf-ipvs +kmod-nf-nat +kmod-veth
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +btrfs-progs +ca-certificates +containerd +libdevmapper +libnetwork +tini +KERNEL_SECCOMP:libseccomp +iptables-mod-extra +kmod-br-netfilter +kmod-ikconfig +kmod-nf-conntrack-netlink +kmod-nf-ipvs +kmod-nf-nat +kmod-veth
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -88917,7 +88917,7 @@ Build-Depends: golang/host
 
 Package: libnetwork
 Version: 2022-06-02-f6ccccb1c082a432c2a5814aaedaca56af33d9ea-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -88942,7 +88942,7 @@ Build-Depends: golang/host
 
 Package: librespeed-cli
 Version: 1.0.10-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -90753,7 +90753,7 @@ Build-Depends: golang/host
 
 Package: miniflux
 Version: 2.0.33-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +pgsql-server
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +pgsql-server
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -91286,7 +91286,7 @@ Build-Depends: golang/host
 
 Package: oci-runtime-tool
 Version: 1.0.0-pre20210122-2
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -95192,7 +95192,7 @@ Build-Depends: golang/host protobuf/host
 
 Package: podman
 Version: 3.4.4-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +conmon +cni +cni-plugins +btrfs-progs +glib2 +gnupg2 +iptables +libgpg-error +libseccomp +libgpgme +nsenter +zoneinfo-simple +kmod-veth
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +conmon +cni +cni-plugins +btrfs-progs +glib2 +gnupg2 +iptables +libgpg-error +libseccomp +libgpgme +nsenter +zoneinfo-simple +kmod-veth
 Conflicts: podman-selinux
 Menu-Depends: 
 Provides: podman
@@ -95213,7 +95213,7 @@ Oskari Rauta <oskari.rauta@gmail.com>
 
 Package: podman-selinux
 Version: 3.4.4-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +conmon +cni +cni-plugins +btrfs-progs +glib2 +gnupg2 +iptables +libgpg-error +libseccomp +libgpgme +nsenter +zoneinfo-simple +kmod-veth +libselinux
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +conmon +cni +cni-plugins +btrfs-progs +glib2 +gnupg2 +iptables +libgpg-error +libseccomp +libgpgme +nsenter +zoneinfo-simple +kmod-veth +libselinux
 Conflicts: 
 Menu-Depends: 
 Provides: podman
@@ -95687,7 +95687,7 @@ Build-Depends: golang/host
 
 Package: prometheus
 Version: 2.22.0-2
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -96008,7 +96008,7 @@ Build-Depends: golang/host
 
 Package: prometheus-statsd-exporter
 Version: 0.15.0-2
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -96501,7 +96501,7 @@ Build-Depends: golang/host
 
 Package: restic
 Version: 0.9.6-2
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -96957,7 +96957,7 @@ Build-Depends: golang/host
 
 Package: runc
 Version: 1.1.2-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64) +KERNEL_SECCOMP_FILTER:libseccomp
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64) +KERNEL_SECCOMP_FILTER:libseccomp
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -101044,7 +101044,7 @@ Build-Depends: golang/host
 
 Package: syncthing
 Version: 1.19.2-0
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -101232,7 +101232,7 @@ Build-Depends: golang/host
 
 Package: telegraf
 Version: 1.23.4-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -101254,7 +101254,7 @@ Jonathan Pagel <jonny_tischbein@systemli.org>
 
 Package: telegraf-full
 Version: 1.23.4-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
@@ -104830,7 +104830,7 @@ Build-Depends: golang/host
 
 Package: yq
 Version: 4.34.2-1
-Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||x86_64)
+Depends: +libc +USE_GLIBC:librt +USE_GLIBC:libpthread @(aarch64||arm||i386||i686||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
 Conflicts: 
 Menu-Depends: 
 Provides: 
