@@ -17,7 +17,8 @@
 		bootargs = "console=ttyS0,115200n1 loglevel=8  \
 			    earlycon=uart8250,mmio32,0x11000000 \
 			    earlyprintk pci=pcie_bus_perf \
-			    block2mtd.block2mtd=/dev/mmcblk0,65536 mtdparts=mmcblk0:4608K(BL2)ro,4M(RF),2M(FIP)ro,32M(Kernel),1024M(rootfs),2048M(usrdata),-(bmtpool) rootfstype=squashfs,jffs2";
+			    root=PARTLABEL=rootfs rootwait \
+			    rootfstype=squashfs,f2fs";
 	};
 
 	memory {

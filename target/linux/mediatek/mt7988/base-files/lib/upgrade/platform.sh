@@ -5,9 +5,11 @@ platform_do_upgrade() {
 	local board=$(board_name)
 
 	case "$board" in
+	bananapi,bpi-r4-nand|\
 	*snand*)
 		ubi_do_upgrade "$1"
 		;;
+	bananapi,bpi-r4|\
 	*emmc*)
 		mtk_mmc_do_upgrade "$1"
 		;;
@@ -26,6 +28,7 @@ platform_check_image() {
 	[ "$#" -gt 1 ] && return 1
 
 	case "$board" in
+	bananapi,bpi-r4*|\
 	*snand* |\
 	*emmc*)
 		# tar magic `ustar`
